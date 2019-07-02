@@ -31,4 +31,18 @@ class LoperViewController extends Controller
         return view('mainView.detailPekerja');
     }
 
+    public function DetailLowongan()
+    {
+        return view('mainView.detailLowongan');
+    }
+
+    public function DetailPerusahaan()
+    {
+        return view('mainView.detailPerusahaan');
+    }
+
+    public function Perusahaan()
+    {
+        return view('mainView.perusahaan.Perusahaan');
+    }
 }

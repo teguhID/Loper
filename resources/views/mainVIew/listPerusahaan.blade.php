@@ -43,7 +43,7 @@
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 165px;"><img class="img-fluid" src="{{ asset('') }}img/inovindodigitalmedia.jpg"></div>
                         <h3 class="d-lg-flex justify-content-lg-center align-items-lg-start name">Inovindo</h3>
                         <p class="d-lg-flex justify-content-lg-center title">it consultant</p>
-                        <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 67px;margin-top: 13px;"><a class="btn btn-primary shadow-lg" role="button" style="font-size: 20px;padding-right: 22px;padding-left: 22px;padding-bottom: 11px;padding-top: 11px;height: 51px;" href="detailPerusahaan.html">Detail</a></div>
+                        <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 67px;margin-top: 13px;"><a class="btn btn-primary shadow-lg" role="button" style="font-size: 20px;padding-right: 22px;padding-left: 22px;padding-bottom: 11px;padding-top: 11px;height: 51px;" href="{{ url('/detailPerusahaan') }}">Detail</a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item" style="height: 400px;margin-bottom: 30px;">

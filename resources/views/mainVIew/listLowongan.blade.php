@@ -48,7 +48,7 @@
                         <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 165px;"><img class="img-fluid" src="{{ asset('') }}img/bukalapak.png"></div>
                         <h1 class="text-center" style="font-size: 16px;margin-top: 4px;margin-bottom: -15px;"><i class="material-icons" style="font-size: 19px;">place</i>&nbsp;Jakarta</h1>
                         <h3 class="text-left d-lg-flex align-items-lg-start name" style="font-size: 16px;">Jenjang : -<br>Status : Full Time<br>Di Butuhkan : 4 Orang<br>Range Fee : 7jt - 8jt<br><br>Update : 24-6-2019<br>Berlaku Sampai : 30-8-2019</h3>
-                        <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 67px;margin-top: 13px;"><a class="btn btn-primary shadow-lg" role="button" style="font-size: 20px;padding-right: 22px;padding-left: 22px;padding-bottom: 11px;padding-top: 11px;height: 51px;" href="detailLowongan.html">Detail</a></div>
+                        <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="height: 67px;margin-top: 13px;"><a class="btn btn-primary shadow-lg" role="button" style="font-size: 20px;padding-right: 22px;padding-left: 22px;padding-bottom: 11px;padding-top: 11px;height: 51px;" href="{{ url('detailLowongan') }}">Detail</a></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 item" style="height: 540px;padding-bottom: 20px;">
