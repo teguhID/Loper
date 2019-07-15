@@ -25,7 +25,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            <input class="form-control" type="password" data-bs-hover-animate="pulse" name="password_confirmation" placeholder="Confirm Password" style="width: 400px;padding-bottom: 6px;margin-bottom: 10px;" required></div>
+            <input class="form-control" type="password" data-bs-hover-animate="pulse" name="password_confirmation" placeholder="Confirm Password" style="width: 400px;padding-bottom: 6px;margin-bottom: 10px;" required>
         </div>
         <div class="form-group d-lg-flex justify-content-lg-center">
             <button class="btn btn-primary" type="submit">SUBMIT</button>

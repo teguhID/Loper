@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\PekerjaModel;
+use App\PerusahaanModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,11 +65,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $data = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'status' => $data['status'],
         ]);
+        if ($data['status'] == 'pekerja') {
+            $data->pekerja = PekerjaModel::create([
+                'id_pelamar' => User::select('id')->max('id'),
+                'nama' => $data['name'],
+                'email' => $data['email'],
+                'foto' => 'defaultImage.png',
+            ]);
+            return $data;
+        }
+        if ($data['status'] == 'perusahaan') {
+            $data->perusahaan = PerusahaanModel::create([
+                'id_perusahaan' => User::select('id')->max('id'),
+                'nama_perusahaan' => $data['name'],
+                'email' => $data['email'],
+                'logo' => 'defaultLogo.png',
+            ]);
+            return $data;
+        }
     }
 }

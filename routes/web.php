@@ -29,10 +29,36 @@ Route::get('/perusahaan', 'LoperViewController@Perusahaan');
 Route::get('home', function()
 {
     if (Auth::user()->status == 'pekerja') {
-        return view('pekerja/dashboard');
+        return App::call('App\Http\Controllers\PekerjaController@Dashboard');
     } 
     if (Auth::user()->status == 'perusahaan') {
-        return view('perusahaan/dashboard');
-    } 
+        return App::call('App\Http\Controllers\PerusahaanController@Dashboard');
+    }
+    else{
+        return view('akunsalah');
+    }
 });
 
+//Pekerja
+Route::get('pekerja/cv', 'PekerjaController@ViewCv');
+Route::get('pekerja/listPerusahaan', 'PekerjaController@ViewListPerusahaan');
+Route::get('pekerja/detailPerusahaan/{id}', 'PekerjaController@ViewDetailPerusahaan');
+Route::get('pekerja/listLowongan', 'PekerjaController@ViewListLowongan');
+Route::get('pekerja/detailLowongan/{id}', 'PekerjaController@ViewDetailLowongan');
+//CV
+Route::get('pekerja/editCv', 'PekerjaController@EditCv');
+Route::put('pekerja/updateCV/{id}', 'PekerjaController@UpdateCv');
+Route::get('pekerja/detailPerusahaan/kirimCv/{id}', 'PekerjaController@KirimCv');
+
+//Perusahaan
+Route::get('perusahaan/profile', 'PerusahaanController@ViewProfilePerusahaan');
+Route::get('perusahaan/editProfile', 'PerusahaanController@EditProfilePerusahaan');
+Route::put('perusahaan/updateProfile/{id}', 'PerusahaanController@updateProfilePerusahaan');
+Route::get('perusahaan/pekerja', 'PerusahaanController@ViewListPekerja');
+Route::get('perusahaan/pekerja/{id}', 'PerusahaanController@ViewDetailPekerja');
+Route::get('perusahaan/lowongan', 'PerusahaanController@ViewListLowongan');
+
+//Perusahaan Mengelola Lowongan
+Route::resource('perusahaan/lowongan/dashboard', 'LowonganController');
+Route::get('perusahaan/lowongan/delete/{id}', 'LowonganController@DeleteLowongan');
+Route::get('perusahaan/lowongan/public', 'LowonganController@ShowAllPublicLowongan');

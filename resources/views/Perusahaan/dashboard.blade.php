@@ -1,34 +1,45 @@
-{{-- @extends('layouts.app') --}}
-
-{{-- @section('content') --}}
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
-    
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-    
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                        You are logged in! PERUSAHAAN
-                    </div>
+@extends('layouts.perusahaan.layout')
+@section('content')
+<div class="highlight-phone" style="padding-top: 240px;padding-bottom: 250px;">
+    <div class="container" style="margin-top: -30px;">
+        <div class="row d-sm-flex justify-content-sm-center align-items-sm-center">
+            <div class="col-md-8" style="margin-top: -40px;">
+                <div class="intro" style="margin-top: 0px;">
+                    <h2>Selamat Datang {{ $data->nama_perusahaan }}</h2>
+                    <p>Selamat Datang di halaman utama LOPER INDONESIA untuk perusahaan, di halaman ini anda bisa melihat calon karyawan, membuat lowongan, dan update profile perusahaan anda</p>
                 </div>
             </div>
+            <div class="col-sm-4 d-flex justify-content-center align-items-center"><img src="{{ asset('') }}img/perusahaan/{{ $data->logo }}" height="300" width="300"></div>
         </div>
     </div>
-    {{-- @endsection --}}
-    
+    <div class="row d-flex justify-content-center align-items-center" style="margin-right: 23px;margin-left: 23px;margin-top: 70px;">
+        <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-edit" style="font-size: 140px;"></i></div>
+        <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
+            <div style="max-width: 300px;">
+                <p style="font-size: 21px;">Update Profile Perusahaan Anda</p><button class="btn btn-primary" type="button">Update</button></div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center" style="margin-right: 23px;margin-left: 23px;margin-top: 90px;">
+        <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-users" style="font-size: 140px;"></i></div>
+        <div class="col-sm-6 d-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
+            <div style="margin-bottom: 20px;max-width: 300px;">
+                <p style="font-size: 21px;">Temukan Calon Karyawan Anda</p><button class="btn btn-primary" type="button">Cari Karyawan</button></div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center" style="margin-right: 23px;margin-left: 23px;margin-top: 90px;">
+        <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-suitcase" style="font-size: 140px;"></i></div>
+        <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
+            <div style="margin-bottom: 20px;max-width: 300px;">
+                <p style="font-size: 21px;">Buat Lowongan Yang Anda Butuhkan</p><button class="btn btn-primary" type="button">Lowongan</button></div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('jquery')
+    <script>
+        $(document).ready(function () {
+            $("#home").css("background-color", "#6c6b6b");
+            $("#pekerja","#lowongan","#profile").css("background-color", "#343a40");
+        });
+    </script>
+@endsection
