@@ -56,9 +56,15 @@ class PekerjaController extends Controller
             'id_lowongan' => $idLowongan,
             'id_pekerja' => $idPekerja,
             'id_perusahaan' => $idPerusahaan,
-            'status' => 'Lamaran Terkirim'
+            'status' => 'Cv Terkirim'
         ]);
-        return 'success';
+        return redirect('pekerja/detailLowongan/' . $id);
+    }
+
+    public function TarikCv($id)
+    {
+        LamaranModel::find($id)->delete();
+        return \App::make('redirect')->back();
     }
 
     public function ViewListPerusahaan()
@@ -83,9 +89,16 @@ class PekerjaController extends Controller
     {
         $getvarDataLowonganForPerusahaan = LowonganModel::find($id)->id_perusahaan;
         $data = [
+            'dataLamaran' => LamaranModel::where('id_lowongan', $id)->first(),
             'lowongan' => LowonganModel::find($id),
             'perusahaan' => PerusahaanModel::where('id_perusahaan', $getvarDataLowonganForPerusahaan)->first(),
         ];
         return view('pekerja/detailLowongan')->with($data);
+    }
+
+    public function CvTerkirim()
+    {
+        $data = LamaranModel::join('lowongan', 'lowongan.id', 'lamaran.id_lowongan')->get();
+        return view('pekerja/cvTerkirim')->with('data', $data);
     }
 }

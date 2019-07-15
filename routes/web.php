@@ -49,6 +49,8 @@ Route::get('pekerja/detailLowongan/{id}', 'PekerjaController@ViewDetailLowongan'
 Route::get('pekerja/editCv', 'PekerjaController@EditCv');
 Route::put('pekerja/updateCV/{id}', 'PekerjaController@UpdateCv');
 Route::get('pekerja/detailPerusahaan/kirimCv/{id}', 'PekerjaController@KirimCv');
+Route::get('pekerja/detailPerusahaan/tarikCv/{id}', 'PekerjaController@TarikCv');
+Route::get('pekerja/cvTerkirim', 'PekerjaController@CvTerkirim');
 
 //Perusahaan
 Route::get('perusahaan/profile', 'PerusahaanController@ViewProfilePerusahaan');

@@ -60,9 +60,17 @@
                         <li class="nav-item" role="presentation"></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul>
-                    <a id="lamaran" class="btn" role="button" style="background-color:#343a40; color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;padding-right: 25px;" href="{{ url('pekerja/cv') }}">Lamaran</a>
+                    <a id="lamaran" class="btn" role="button" style="background-color:#343a40; color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;padding-right: 25px;" href="{{ url('pekerja/cv') }}">Cv</a>
                     <a id="perusahaan" class="btn" role="button" style="background-color: #343a40; color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;" href="{{ url('pekerja/listPerusahaan') }}">Perusahaan</a>
-                    <a id="lowongan" class="btn" role="button" style="background-color: #343a40; color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;" href="{{ url('pekerja/listLowongan') }}">Lowongan</a>
+                    
+                    <li class="dropdown" style="color: rgba(33,37,41,0);">
+                        <a id="lowongan" href="#" class="dropdown-toggle btn" role="button" data-toggle="dropdown" aria-expanded="true" style="background-color: #343a40; color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px; font-family: Montserrat, sans-serif; text-decoration: none"><strong>Lowongan</strong></a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="{{ url('pekerja/listLowongan') }}" style="font-family: Montserrat, sans-serif;font-weight: bold; font-size: 14px;">List Lowongan</a>
+                            <a class="dropdown-item" role="presentation" href="{{ url('pekerja/cvTerkirim') }}" style="font-family: Montserrat, sans-serif;font-weight: bold; font-size: 14px;">Cv Terkirim</a>
+                        </div>
+                    </li>
+                    
                     <li class="dropdown" style="color: rgba(33,37,41,0);">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="color: rgb(255,255,255);font-family: Montserrat, sans-serif; text-decoration: none"><strong>{{ Auth::user()->name }}</strong></a>
                         <div class="dropdown-menu" role="menu">
@@ -85,7 +93,7 @@
         <main>
             @yield('content')
         </main>
-    <footer style="background-color: #343a40;color: rgb(255,255,255);">
+    <footer style="background-color: #343a40;color: rgb(255,255,255); padding-top: 40px">
         <div class="container">
             <div class="row">
                 <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Loper Indonesia 2019</span></div>

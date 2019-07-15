@@ -12,7 +12,13 @@
                 </div>
                 <div class="intro">
                     <h1 class="text-center" style="font-size: 21px;margin-top: -52px;">&nbsp;Deadline : {{ date("d-m-Y", strtotime($lowongan->deadline)) }}</h1>
+                    <br>
                 </div>
+                @if ($dataLamaran == true)
+                    <h1 class="text-center" style="font-size: 16px;margin-top: -52px;color: lightseagreen">Status Cv :&nbsp;{{ $dataLamaran->status }}</h1>
+                @else
+                    <h1 class="text-center" style="font-size: 16px;margin-top: -52px;color: red">Status CV :&nbsp;-</h1>
+                @endif
             </div>
         </div>
         <div class="row">
@@ -21,9 +27,15 @@
                 <div class="text">
                     <p><br><?php echo(nl2br($lowongan->deskripsi)); ?><br><br></p>
                     <!-- Button Trigger Confirm -->
-                    <a href="#" class="btn btn-primary" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;" data-toggle="modal" data-target="#exampleModalCenter">
-                        Kirim CV
-                    </a>
+                    @if ($dataLamaran == true)
+                        <a href="{{ url('pekerja/detailPerusahaan/tarikCv/' . $dataLamaran->id) }}" class="btn btn-danger" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;">
+                            Tarik CV
+                        </a>
+                    @else
+                        <a href="#" class="btn btn-primary" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;" data-toggle="modal" data-target="#exampleModalCenter">
+                            Kirim CV
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -43,6 +55,7 @@
           </div>
         </div>
       </div>
+
 @endsection
 @section('jquery')
     <script>
