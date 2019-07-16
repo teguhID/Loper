@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\PerusahaanModel;
 use App\LowonganModel;
+use App\lamaranModel;
 use App\PekerjaModel;
 use App\User;
 use Auth;
@@ -31,11 +32,11 @@ class PerusahaanController extends Controller
 
     public function ViewListLowongan()
     {
+        lamaranModel::join('lowongan', 'lowongan.id', 'lamaran.id_lowongan')->get();
         $data=[
             'perusahaan' => PerusahaanModel::where('nama_perusahaan', Auth::user()->name)->first(),
-            'lowongan' => LowonganModel::all(),
+            'lowongan' => LowonganModel::where('perusahaan', Auth::user()->name)->get(),
         ];
-
         return view('perusahaan.lowongan.listLowongan')->with($data);
     }
 

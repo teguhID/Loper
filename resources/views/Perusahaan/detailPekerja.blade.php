@@ -45,8 +45,8 @@
             <div class="col-sm-6" style="max-width: 70%;"><span>{{ $data->web }}</span></div>
         </div>
         <div class="row">
-            <div class="col-sm-6 d-xl-flex justify-content-xl-end" style="max-width: 30%;padding-right: 0px;padding-left: 10px;height: 30px;"><span>Status :</span></div>
-            <div class="col-sm-6" style="max-width: 70%;"><span>{{ $data->status }}</span></div>
+            <div class="col-sm-6 d-xl-flex justify-content-xl-end" style="max-width: 30%;padding-right: 0px;padding-left: 10px;height: 30px;"><span>status_perkawinan :</span></div>
+            <div class="col-sm-6" style="max-width: 70%;"><span>{{ $data->status_perkawinan }}</span></div>
         </div>
         <div class="row">
             <div class="col-sm-6 d-xl-flex justify-content-xl-end" style="max-width: 30%;padding-right: 0px;padding-left: 10px;height: 30px;"><span>Agama :</span></div>

@@ -14,7 +14,7 @@
                     <h1 class="text-center" style="font-size: 21px;margin-top: -52px;">&nbsp;Deadline : {{ date("d-m-Y", strtotime($lowongan->deadline)) }}</h1>
                 </div>
                 <div class="intro">
-                    <h1 class="text-center" style="font-size: 21px;margin-top: -52px;"><i class="fas fa-users"></i><a href="pelamarLowonganPerusahaan.html" style="margin-left: 16px;color: rgb(255,107,0);">1 Orang Pelamar</a>&nbsp;</h1>
+                    <h1 class="text-center" style="font-size: 21px;margin-top: -52px;"><i class="fas fa-users"></i><a href="pelamarLowonganPerusahaan.html" style="margin-left: 16px;color: rgb(255,107,0);">{{ $dataCvMasuk }} Orang Pelamar</a>&nbsp;</h1>
                 </div>
             </div>
         </div>

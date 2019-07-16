@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\LowonganModel;
+use App\LamaranModel;
 use App\PerusahaanModel;
 use Auth;
 
@@ -35,6 +36,7 @@ class LowonganController extends Controller
     public function show($id)
     {
         $data = [
+            'dataCvMasuk' => LamaranModel::where('id_lowongan', $id)->where('id_perusahaan', Auth::user()->id)->count(),
             'lowongan' => LowonganModel::find($id),
             'perusahaan' => PerusahaanModel::where('nama_perusahaan', Auth::user()->name)->first(),
         ];
@@ -60,5 +62,18 @@ class LowonganController extends Controller
     {
         LowonganModel::find($id)->delete();
         return redirect('perusahaan/lowongan');
+    }
+
+    public function CvMasuk($id)
+    {
+        $data = LamaranModel::join('pekerja', 'pekerja.id_pelamar', 'lamaran.id_pekerja')->where('id_lowongan', $id)->where('status','Cv Terkirim')->get();
+        return view('perusahaan.lowongan.cvMasuk')->with('data', $data);
+    }
+
+    public function ProsesCv($idLowongan, $idPekerja)
+    {
+        LamaranModel::where('id_pekerja',$idPekerja)->update(['status' => 'Cv Di Proses']);
+        $data = LamaranModel::join('pekerja', 'pekerja.id_pelamar', 'lamaran.id_pekerja')->where('id_lowongan', $idLowongan)->where('status','Cv Di Proses')->get();
+        return view('perusahaan.lowongan.cvTerproses')->with('data', $data);
     }
 }

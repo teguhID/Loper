@@ -64,3 +64,5 @@ Route::get('perusahaan/lowongan', 'PerusahaanController@ViewListLowongan');
 Route::resource('perusahaan/lowongan/dashboard', 'LowonganController');
 Route::get('perusahaan/lowongan/delete/{id}', 'LowonganController@DeleteLowongan');
 Route::get('perusahaan/lowongan/public', 'LowonganController@ShowAllPublicLowongan');
+Route::get('perusahaan/lowongan/cvMasuk/{id}', 'LowonganController@CvMasuk');
+Route::get('perusahaan/lowongan/prosesCv/{idLowongan}/{idPekerja}', 'LowonganController@ProsesCv'); 

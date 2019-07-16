@@ -62,20 +62,20 @@
         <div class="form-group"><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Web</small><input class="border rounded-0 form-control" type="text" name="web" style="max-width: 100%;min-width: 100%;margin-bottom: 10px;" value="{{ $data->web }}"></div>
         <div class="form-group"><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Status</small>
             <div class="dropdown">
-                <select class="form-control form-control-lg" name="status">
+                <select class="form-control form-control-lg" name="status_perkawinan">
                     <?php
-                        $status = array('','Lajang','Menikah','Janda','Duda','Lainnya');
+                        $status_perkawinan = array('','Lajang','Menikah','Janda','Duda','Lainnya');
                     ?>
-                    @foreach ($status as $statuss)
-                        <option value="{{ $statuss }}"
+                    @foreach ($status_perkawinan as $status_perkawinans)
+                        <option value="{{ $status_perkawinans }}"
                             <?php 
-                                if ($data->status == $statuss) {
+                                if ($data->status_perkawinan == $status_perkawinans) {
                                     echo('selected');
                                 }else{
                                     echo('');
                                 }
                             ?>
-                        >{{ $statuss }}</option>
+                        >{{ $status_perkawinans }}</option>
                     @endforeach
                 </select>
             </div>

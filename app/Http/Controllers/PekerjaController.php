@@ -89,7 +89,7 @@ class PekerjaController extends Controller
     {
         $getvarDataLowonganForPerusahaan = LowonganModel::find($id)->id_perusahaan;
         $data = [
-            'dataLamaran' => LamaranModel::where('id_lowongan', $id)->first(),
+            'dataLamaran' => LamaranModel::where('id_lowongan', $id)->where('id_pekerja', Auth::user()->id)->first(),
             'lowongan' => LowonganModel::find($id),
             'perusahaan' => PerusahaanModel::where('id_perusahaan', $getvarDataLowonganForPerusahaan)->first(),
         ];
@@ -98,7 +98,7 @@ class PekerjaController extends Controller
 
     public function CvTerkirim()
     {
-        $data = LamaranModel::join('lowongan', 'lowongan.id', 'lamaran.id_lowongan')->get();
+        $data = LamaranModel::join('lowongan', 'lowongan.id', 'lamaran.id_lowongan')->where('id_pekerja', Auth::user()->id)->get();
         return view('pekerja/cvTerkirim')->with('data', $data);
     }
 }

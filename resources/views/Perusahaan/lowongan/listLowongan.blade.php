@@ -17,8 +17,8 @@
                                 <th width="50">No</th>
                                 <th width="700">Judul</th>
                                 <th width="900">Deskripsi</th>
-                                <th width="100">Pelamar</th>
-                                <th class="d-xl-flex justify-content-xl-center" width="260">Action</th>
+                                {{-- <th width="200">Cv Masuk</th> --}}
+                                <th class="d-xl-flex justify-content-xl-center" width="160">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,11 +28,12 @@
                                 <td class="text-center">{{ $no++ }}</td>
                                 <td><a href="{{ url('perusahaan/lowongan/dashboard/' . $lowongans->id) }}" style="color: black">{{ $lowongans->judul }}</a></td>
                                 <td>{{substr($lowongans->deskripsi, 0, 100)}} ....<br></td>
-                                <td>1 Orang</td>
+                                {{-- <td>1 Orang</td> --}}
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-info btn-xs float-right" href="{{ url('perusahaan/lowongan/dashboard/' . $lowongans->id . '/edit') }}" ><i class="fa fa-pencil-square-o"></i></a>
-                                        <a class="btn btn-danger btn-xs float-right" href="{{ url('perusahaan/lowongan/delete/' . $lowongans->id) }}"  onclick="return confirm('Yakin Ingin Hapus Data {{ $lowongans->judul }} ?')"><i class="fa fa-trash"></i></a>
+                                        <a class="btn btn-info btn-xs float-right" href="{{ url('perusahaan/lowongan/dashboard/' . $lowongans->id . '/edit') }}" style="font-size: 12px">Edit</a>
+                                        <a class="btn btn-success btn-xs float-right" href="{{ url('perusahaan/lowongan/cvMasuk/' . $lowongans->id ) }}" style="font-size: 12px">Cv Masuk</a>
+                                        <a class="btn btn-danger btn-xs float-right" href="{{ url('perusahaan/lowongan/delete/' . $lowongans->id) }}"  onclick="return confirm('Yakin Ingin Hapus Data {{ $lowongans->judul }} ?')" style="font-size: 12px">Hapus</a>
                                     </div>
                                 </td>
                             </tr>

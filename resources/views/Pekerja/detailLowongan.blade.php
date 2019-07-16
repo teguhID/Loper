@@ -28,9 +28,19 @@
                     <p><br><?php echo(nl2br($lowongan->deskripsi)); ?><br><br></p>
                     <!-- Button Trigger Confirm -->
                     @if ($dataLamaran == true)
-                        <a href="{{ url('pekerja/detailPerusahaan/tarikCv/' . $dataLamaran->id) }}" class="btn btn-danger" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;">
-                            Tarik CV
-                        </a>
+                        @if ($dataLamaran->status == "Cv Terkirim")
+                            <a href="{{ url('pekerja/detailPerusahaan/tarikCv/' . $dataLamaran->id) }}" class="btn btn-danger" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;">
+                                Tarik CV
+                            </a>
+                        @else
+                            <div class="alert alert-warning" role="alert">
+                                Cv anda sudah di Proses oleh perusahaan, Tunggu sampai pihak perusahaaan menghubungi anda untuk proses recruitment selanjutnya
+                            </div>
+                            <a class="btn btn-danger disabled" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;">
+                                Tarik CV
+                            </a>
+                            {{-- Cv anda sudah di Proses oleh perusahaan --}}
+                        @endif
                     @else
                         <a href="#" class="btn btn-primary" style="margin-bottom: 50px;padding-top: 12px;padding-right: 40px;padding-bottom: 12px;padding-left: 40px;margin-top: 50px;" data-toggle="modal" data-target="#exampleModalCenter">
                             Kirim CV
