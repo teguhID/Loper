@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="{{ asset('css/Article-Dual-Column.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Article-List.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fullpage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/best-carousel-slide.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Contact-Form-Clean.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Contact-form.css') }}">
@@ -93,24 +94,9 @@
         <main>
             @yield('content')
         </main>
-    <footer style="background-color: #343a40;color: rgb(255,255,255); padding-top: 40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Loper Indonesia 2019</span></div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"></li>
-                        <li class="list-inline-item"><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer style="flex-shrink: none; bottom: 0; position: fixed; width: 100%" class="py-1 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Loper Indonesia</small>
         </div>
     </footer>
     <script src="{{ asset('') }}js/jquery.min.js"></script>

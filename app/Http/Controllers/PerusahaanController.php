@@ -26,7 +26,7 @@ class PerusahaanController extends Controller
 
     public function ViewDetailPekerja($id)
     {
-        $data = PekerjaModel::find($id)->first();
+        $data = PekerjaModel::find($id);
         return view('perusahaan.detailPekerja')->with('data', $data);
     }
 

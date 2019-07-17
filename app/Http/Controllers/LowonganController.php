@@ -76,4 +76,10 @@ class LowonganController extends Controller
         $data = LamaranModel::join('pekerja', 'pekerja.id_pelamar', 'lamaran.id_pekerja')->where('id_lowongan', $idLowongan)->where('status','Cv Di Proses')->get();
         return view('perusahaan.lowongan.cvTerproses')->with('data', $data);
     }
+
+    public function ViewProsesCv($id)
+    {
+        $data = LamaranModel::join('pekerja', 'pekerja.id_pelamar', 'lamaran.id_pekerja')->where('id_lowongan', $id)->where('status','Cv Di Proses')->get();
+        return view('perusahaan.lowongan.cvTerproses')->with('data', $data);
+    }
 }

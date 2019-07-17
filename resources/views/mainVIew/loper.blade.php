@@ -77,7 +77,7 @@
         <h2 class="text-center" style="padding-top: 0px;padding-bottom: 30px;"><a href="{{ url('/listPerusahaan') }}" style="color: rgb(0,0,0);font-family: Montserrat, sans-serif;font-weight: bold;font-size: 16px;">Lihat Lebih Banyak</a></h2>
     </div>
 </div>
-<div class="team-boxed">
+<div class="team-boxed" style="margin-bottom: 70px">
     <div class="container">
         <div class="intro">
             <h2 class="text-center" style="padding-top: 80px;">PEKERJA</h2>

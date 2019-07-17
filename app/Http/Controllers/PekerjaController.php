@@ -8,6 +8,7 @@ use App\LowonganModel;
 use App\PerusahaanModel;
 use App\LamaranModel;
 use App\User;
+use File;
 use Auth;
 
 class PekerjaController extends Controller
@@ -39,13 +40,43 @@ class PekerjaController extends Controller
         return view('pekerja.editCv')->with('data', $data);;
     }
 
+
+
+
     public function UpdateCv(Request $req, $id)
     {
-        $idPekerja = $idPekerja = PekerjaModel::where('id', $id)->first()->id_pelamar;
-        PekerjaModel::where('id', $id)->update($req->except(['_token', '_method', 'name']));
-        User::where('id', $idPekerja)->update(['name' => $req->nama]);
-        return redirect('pekerja/cv');
+        $fotoValue = PekerjaModel::where('id', $id)->first()->foto;
+        $file_foto = $req->foto;
+        if ($file_foto == null) {
+            //only data without foto
+            $idPekerja = $idPekerja = PekerjaModel::where('id', $id)->first()->id_pelamar;
+            PekerjaModel::where('id', $id)->update($req->except(['_token', '_method', 'name', 'foto']));
+            User::where('id', $idPekerja)->update(['name' => $req->nama]);
+            return redirect('pekerja/cv');
+        } else {
+            //foto
+                //delete foto
+            $foto = PekerjaModel::where('id',$id)->first()->foto;
+            File::delete('img/profile/'.$foto);
+                //insert foto
+            $name_foto = time()."_".$file_foto->getClientOriginalName();
+            $file_foto->move('img/profile', $name_foto);
+            PekerjaModel::where('id', $id)->first()->update(['foto'=>$name_foto,]);
+            //data
+            $idPekerja = $idPekerja = PekerjaModel::where('id', $id)->first()->id_pelamar;
+            PekerjaModel::where('id', $id)->update($req->except(['_token', '_method', 'name', 'foto']));
+            User::where('id', $idPekerja)->update(['name' => $req->nama]);
+            return redirect('pekerja/cv');  
+        }
     }
+
+
+
+
+
+
+
+
 
     public function KirimCv($id)
     {

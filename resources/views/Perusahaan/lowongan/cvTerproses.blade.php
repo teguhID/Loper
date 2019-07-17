@@ -1,6 +1,6 @@
 @extends('layouts.perusahaan.layout')
 @section('content')
-<div class="team-boxed" style="padding-top: 63px;background-color: #d7d7d7;">
+<div class="team-boxed" style="padding-top: 63px;background-color: white;">
     <div class="container">
         <div class="intro">
             <h2 class="text-center" style="padding-top: 80px;">Pekerja</h2>

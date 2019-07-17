@@ -26,7 +26,7 @@
             <div class="col-sm-6 col-lg-4 d-flex justify-content-xl-start align-items-xl-center item" style="margin: 15px;margin-bottom: 15px;width: 250px;height: 89px;margin-right: 15px;margin-left: 15px;max-width: 100%;"><i class="fa fa-phone icon" style="font-size: 40px;min-width: 60px;"></i><small class="form-text text-muted" style="margin-top: 0px;padding-left: 0px;font-size: 16px;">{{ $data->phone }}</small></div>
     </div>
 </div>
-<h2 class="text-center d-sm-flex d-xl-flex justify-content-sm-center justify-content-xl-center align-items-xl-center" style="padding-top: 20px;font-size: 37px;padding-bottom: 20px;"><a class="btn btn-primary" role="button" style="height: 49px;width: 160px;padding-top: 12px;" href="{{ url('perusahaan/editProfile') }}"><i class="fa fa-pencil-square-o" style="padding-right: 11px;"></i>Edit Profile</a></h2>
+    <h2 class="text-center d-sm-flex d-xl-flex justify-content-sm-center justify-content-xl-center align-items-xl-center" style="padding-top: 20px;font-size: 37px;padding-bottom: 60px;"><a class="btn btn-primary" role="button" style="height: 49px;width: 160px;padding-top: 12px;" href="{{ url('perusahaan/editProfile') }}"><i class="fa fa-pencil-square-o" style="padding-right: 11px;"></i>Edit Profile</a></h2>
 </div>
 @endsection
 @section('jquery')

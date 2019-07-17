@@ -1,7 +1,7 @@
 @extends('layouts.pekerja.layout')
 @section('content')
 <div class="contact-clean">
-        <form action="{{ url('pekerja/updateCV/' . $data->id) }}" class="border rounded border-dark shadow-lg" method="post" style="max-width: 100%;padding-top: 40px;margin-top: 61px;background-color: rgb(248,248,248);">
+        <form action="{{ url('pekerja/updateCV/' . $data->id) }}" class="border rounded border-dark shadow-lg" method="post" style="max-width: 100%;padding-top: 40px;margin-top: 61px;background-color: rgb(248,248,248);" enctype="multipart/form-data">
             {{ method_field('PUT') }} 
             {{ csrf_field() }}
             <h2 class="text-center">Update CV</h2>
@@ -9,7 +9,7 @@
                 <div class="box"></div>
                 <div class="author" style="width: 300px;"><img class="rounded-circle" src="{{ asset('') }}img/profile/{{ $data->foto }}" style="width: 300px;max-width: 70%;max-height: 80%;">
                     <br><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Ganti Foto</small>
-                    <input type="file" style="margin-top: 10px;margin-bottom: 10px;">
+                    <input name="foto" type="file" style="margin-top: 10px;margin-bottom: 10px;">
                 </div>
             </div>
             <div class="form-group"><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Nama</small><input class="border rounded-0 form-control" type="text" style="max-width: 100%;min-width: 100%;margin-bottom: 10px;" name="nama" value="{{ $data->nama }}"></div>

@@ -1,6 +1,6 @@
 @extends('layouts.pekerja.layout')
 @section('content')
-<div class="team-boxed" style="padding-top: 63px;background-color: #d7d7d7;">
+<div class="team-boxed" style="padding-top: 63px;background-color: white;">
     <div class="container">
         <div class="intro">
             <h2 class="text-center" style="padding-top: 80px;">PERUSAHAAN</h2>
@@ -16,19 +16,18 @@
                 <tr class="text-center">
                     <td> 
                     <div class="container">
-                        <div class="card flex-row flex-wrap" style="margin-bottom: 45px; margin-top: 25px; border-radius: 25px;">
-                            <div class="card-header border-0" style="background-color: white">
+                        <div class="photo-card" style="margin-bottom: 45px; margin-top: 25px; border-radius: 25px;">
+                            <div class="card-header border-0">
                                 <img class="rounded-circle" src="{{ asset('') }}img/perusahaan/{{ $datas->logo }}" height="140" width="140">
                             </div>
-                            <div class="card-block px-2" style="padding-top: 2vw">
+                            <div class="card-block px-2" style="padding-top: 2vw; margin-left: 2vw">
                                 <h3 class="card-title">{{ $datas->nama_perusahaan }}</h3>
                                     <div class="row">
                                         <p style="padding: 5px; margin-left: 10px;" class="card-text"><i class="fa fa-circle"></i> {{ $datas->jenis_usaha }}</p>      
                                     </div>
-                                
                             </div>
-                            <div class="w-100" style="padding: 20px; margin-top: -40px">
-                                <a href="{{ url('pekerja/detailPerusahaan/' . $datas->id) }}" class="btn btn-primary float-right" style="padding-left: 19px; padding-right: 19px">Detail</a>
+                            <div class="w-100" style="padding-top: 20px;">
+                                <a href="{{ url('pekerja/detailPerusahaan/' . $datas->id) }}" class="btn btn-info float-right" style="margin-top:20px; font-size: 14px;">Detail</a>
                             </div>
                         </div>
                     </div>

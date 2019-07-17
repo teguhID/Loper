@@ -1,9 +1,9 @@
 @extends('layouts.pekerja.layout')
 @section('content')
-<div class="team-boxed" style="padding-top: 83px;background-color: #d7d7d7; padding-bottom: 100px;">
+<div class="team-boxed" style="padding-top: 83px ;background-color: white; padding-bottom: 100px;">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center" style="padding-top: 80px;">Cv Terkirim</h2>
+                <h2 class="text-center" style="padding-top: 40px;">Cv Terkirim</h2>
             </div>
             <table class="table table-striped" id="myTable" style="">
                 <thead>
