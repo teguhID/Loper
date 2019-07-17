@@ -70,7 +70,7 @@
     </div>
     <footer style="flex-shrink: none; bottom: 0; position: fixed; width: 100%" class="py-1 bg-dark text-white-50">
         <div class="container text-center">
-            <small>Copyright <a href="#" style="color: darkgrey; text-decoration: none">&copy;</a> Loper Indonesia</small> 
+            <small>Copyright <a href="{{ url('admin/login') }}" style="color: darkgrey; text-decoration: none">&copy;</a> Loper Indonesia</small> 
         </div>
     </footer>
     <script src="{{ asset('') }}js/jquery.min.js"></script>

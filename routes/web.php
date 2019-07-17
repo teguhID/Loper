@@ -34,6 +34,9 @@ Route::get('home', function()
     if (Auth::user()->status == 'perusahaan') {
         return App::call('App\Http\Controllers\PerusahaanController@Dashboard');
     }
+    if (Auth::user()->status == 'admin') {
+        return App::call('App\Http\Controllers\AdminController@Dashboard');
+    }
     else{
         return view('akunsalah');
     }
@@ -69,4 +72,4 @@ Route::get('perusahaan/lowongan/prosesCv/{idLowongan}/{idPekerja}', 'LowonganCon
 Route::get('perusahaan/lowongan/prosesCv/{id}', 'LowonganController@ViewProsesCv');
 
 //Admin
-Route::get('admin/dashboard', 'AdminController@Dashboard');
+Route::get('admin/login', 'AdminController@Login');
