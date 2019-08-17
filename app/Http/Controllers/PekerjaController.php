@@ -22,7 +22,8 @@ class PekerjaController extends Controller
     {
          $data = [
              'pekerja' => PekerjaModel::where('nama', Auth::user()->name)->first(),
-             'lowongan' => LowonganModel::limit(3)->get()
+             'lowongan' => LowonganModel::limit(3)->get(),
+             'listLowongan' => LamaranModel::where('id_pekerja', Auth::user()->id)->count(),
          ];
 
          return view('pekerja.dashboard')->with($data);
@@ -39,9 +40,6 @@ class PekerjaController extends Controller
         $data = PekerjaModel::where('nama', Auth::user()->name)->first();
         return view('pekerja.editCv')->with('data', $data);;
     }
-
-
-
 
     public function UpdateCv(Request $req, $id)
     {

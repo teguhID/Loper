@@ -32,7 +32,6 @@
     {{-- <link rel="stylesheet" href="{{ asset('') }}css/Dynamic-Table.css"> --}}
     <link rel="stylesheet" href="{{ asset('') }}css/Features-Boxed.css">
     <link rel="stylesheet" href="{{ asset('') }}css/Features-Clean.css">
-    <link rel="stylesheet" href="{{ asset('') }}css/Header-Blue.css">
     <link rel="stylesheet" href="{{ asset('') }}css/Highlight-Phone.css">
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -63,10 +62,9 @@
                         <a id="profile" class="btn" role="button" style="color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;" href="{{ url('perusahaan/profile') }}">Profile</a>
                         <a id="pekerja" class="btn" role="button" style="color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;" href="{{ url('perusahaan/pekerja') }}">Pekerja</a>
                         <a id="lowongan" class="btn" role="button" style="color: rgb(255,255,255);padding-left: 24px;padding-bottom: 12px;padding-top: 12px;" href="{{ url('perusahaan/lowongan') }}">Lowongan</a>
-                    <li class="dropdown show" style="color: rgba(33,37,41,0);">
+                    <li class="dropdown show" style="color: rgba(33,37,41,0); padding-left: 25px">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="color: rgb(255,255,255);font-family: Montserrat, sans-serif; text-decoration: none"><strong>{{ Auth::user()->name }}</strong></a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="#" style="font-family: Montserrat, sans-serif;font-weight: bold;">Akun</a>
                             <div>
                                 <a class="dropdown-item" role="presentation" href="{{ route('logout') }}" style="font-family: Montserrat, sans-serif;font-weight: bold; font-size: 14px;"
                                     onclick="event.preventDefault();

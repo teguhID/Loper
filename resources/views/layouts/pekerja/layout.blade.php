@@ -72,10 +72,9 @@
                         </div>
                     </li>
                     
-                    <li class="dropdown" style="color: rgba(33,37,41,0);">
+                    <li class="dropdown" style="color: rgba(33,37,41,0); padding-left: 20px">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="color: rgb(255,255,255);font-family: Montserrat, sans-serif; text-decoration: none"><strong>{{ Auth::user()->name }}</strong></a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" role="presentation" href="{{ url('pekerja/cv') }}" style="font-family: Montserrat, sans-serif;font-weight: bold; font-size: 14px;">CV</a>
                             <div>
                                 <a class="dropdown-item" role="presentation" href="{{ route('logout') }}" style="font-family: Montserrat, sans-serif;font-weight: bold; font-size: 14px;"
                                     onclick="event.preventDefault();

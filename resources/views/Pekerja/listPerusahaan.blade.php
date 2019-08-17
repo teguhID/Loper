@@ -1,7 +1,7 @@
 @extends('layouts.pekerja.layout')
 @section('content')
 <div class="team-boxed" style="padding-top: 63px;background-color: white;">
-    <div class="container">
+    <div class="container" style="padding-bottom: 6vw">
         <div class="intro">
             <h2 class="text-center" style="padding-top: 80px;">PERUSAHAAN</h2>
         </div>
@@ -45,15 +45,13 @@
             $("#perusahaan").css("background-color", "#6c6b6b");
             $("#lamaran","#home","#lowongan").css("background-color", "#343a40");
             $('#myTable').DataTable({
-                "bLengthChange": false,
-                "bFilter": true,
+                "ordering": false,
                 "bInfo": false,
-                "bAutoWidth": false,
                 "pagingType": "simple",
                 language: {
                     paginate: {
-                        previous: '<h6 style="color:#F9B32F; text-decoration: none"><<&nbsp;previous&nbsp;&nbsp;</h6>',
-                        next:     '<h6 style="color:#F9B32F; text-decoration: none">&nbsp;&nbsp;next&nbsp;>></h6>',
+                        previous: '<h6 style="color:grey; text-decoration: none"><<&nbsp;previous&nbsp;&nbsp;</h6>',
+                        next:     '<h6 style="color:grey; text-decoration: none">&nbsp;&nbsp;next&nbsp;>></h6>',
                     },
                 } 
             });

@@ -20,7 +20,7 @@ Route::get('/daftarPekerja', 'LoperViewController@DaftarPekerja');
 Route::get('/listPerusahaan', 'LoperViewController@ListPerusahaan');
 Route::get('/listLowongan', 'LoperViewController@ListLowongan');
 Route::get('/listPekerja', 'LoperViewController@ListPekerja');
-Route::get('/detailPekerja', 'LoperViewController@DetailPekerja');
+Route::get('/detailPekerja/{id}', 'LoperViewController@DetailPekerja');
 Route::get('/detailLowongan', 'LoperViewController@DetailLowongan');
 Route::get('/detailPerusahaan', 'LoperViewController@DetailPerusahaan');
 //Route Front Page Perusahaan

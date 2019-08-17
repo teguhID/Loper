@@ -126,7 +126,7 @@
                     <div class="form-group">
                         <h5>Pilih Keahlian Anda</h5><br>
                         <?php
-                            $keahlian = array('','Announcer','Back End Developer','Cameramen','Design Grafis','Dokter Gigi','Dokter Umum','Front End Developer','Full Stack Developer','Guru Bahasa Indonesia','Guru Matematika','MC','Mekanik Mobil','Mekanik Motor','Network Engineer','Penulis Berita','Penulis Buku','Penulis Naskah','Photo Editor','Photographer','Programmer','Teknisi Jaringan','Teknisi Komputer','Tukang Sulap','Video Editor','Videographer');
+                            $keahlian = array('','Back End Developer','Badut Sulap','Bartender','Cameramen','Cleaning Service','Cheff','Design Grafis','Dokter Gigi','Dokter Spesialis','Dokter Umum','Drafter','Event Organizer','Front End Developer','Full Stack Developer','Guru Agama','Guru Bahasa Indonesia','Guru Matematika','Ibu Rumah Tangga','MC','Mekanik Mobil','Mekanik Motor','Make Up Artist','Network Engineer','Notaris','Office Boy','Orgen Tunggal','Pekerja Bangunan','Penulis Berita','Penulis Buku','Penulis Naskah','Penyiar Radio','Pelayan Toko','Pengacara','Penyanyi','Photo Editor','Photographer','Programmer','Supir Bis','Supir Mobil','Supir Truck','Teknisi Jaringan','Teknisi Elektronik','Teknisi Listrik','Tukang Jahit','Tukang Kebun','Video Editor','Videographer','Waiters','Wedding Organizer', 'Lainnya');
                         ?>
                         <div class="form-group"><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Keahlian 1</small>
                             <div class="dropdown">

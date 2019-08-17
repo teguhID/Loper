@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="login-clean" style="padding-top: 187px;padding-bottom: 150px;">
+<div class="login-clean" style="padding-top: 187px; padding-bottom: 150px;">
     <form method="post" action="{{ route('login') }}" style="width: 450px;height: 400px;max-width: 450px;">
         {{ csrf_field() }}
         <div class="d-lg-flex illustration">

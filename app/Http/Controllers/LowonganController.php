@@ -10,6 +10,11 @@ use Auth;
 
 class LowonganController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         # code...
@@ -35,10 +40,12 @@ class LowonganController extends Controller
 
     public function show($id)
     {
+        $id_perusahaan = LowonganModel::where('id', $id)->pluck('id_perusahaan')->first();
         $data = [
             'dataCvMasuk' => LamaranModel::where('id_lowongan', $id)->where('id_perusahaan', Auth::user()->id)->count(),
             'lowongan' => LowonganModel::find($id),
             'perusahaan' => PerusahaanModel::where('nama_perusahaan', Auth::user()->name)->first(),
+            'logo' => PerusahaanModel::where('id_perusahaan', $id_perusahaan)->pluck('logo')->first(),
         ];
         return view('perusahaan/lowongan/detailLowongan')->with($data);
     }

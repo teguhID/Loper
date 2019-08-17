@@ -1,15 +1,15 @@
 @extends('layouts.perusahaan.layout')
 @section('content')
 <div class="contact-clean">
-    <form action="{{ url('perusahaan/updateProfile/' . $data->id) }}" class="border rounded border-dark shadow-lg" method="post" style="max-width: 100%;padding-top: 40px;margin-top: 61px;background-color: rgb(248,248,248);">
+    <form action="{{ url('perusahaan/updateProfile/' . $data->id) }}" class="border rounded border-dark shadow-lg" method="post" style="max-width: 100%;padding-top: 40px;margin-top: 61px;background-color: rgb(248,248,248);" enctype="multipart/form-data">
         {{ method_field('PUT') }} 
         {{ csrf_field() }}
         <h2 class="text-center">Update Profile Perusahaan</h2>
         <div class="col-md-6 col-lg-4 item">
             <div class="box"></div>
-            <div class="author" style="width: 300px;"><img class="rounded-circle" src="{{ asset('') }}img/perusahaan/{{ $data->logo }}" style="width: 300px;max-width: 70%;max-height: 80%;">
-                <br><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Ganti Logo</small>
-                <input type="file" style="margin-top: 10px;margin-bottom: 10px;">
+            <div class="author" style="width: 300px;"><img class="rounded-circle" src="{{ asset('') }}img/perusahaan/{{ $data->logo }}" style="" height="200" width="200">
+                <br>
+                <input type="file" style="margin-top: 10px;margin-bottom: 10px;" name="logo">
             </div>
         </div>
         <div class="form-group"><small class="form-text text-muted" style="color: rgb(134,142,150);font-family: Barlow, sans-serif;font-weight: normal;font-size: 17px;padding-left: 12px;">Nama Perusahaan</small><input class="border rounded-0 form-control" type="text" style="max-width: 100%;min-width: 100%;margin-bottom: 10px;" name="nama_perusahaan" value="{{ $data->nama_perusahaan }}"></div>

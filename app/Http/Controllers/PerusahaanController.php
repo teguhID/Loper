@@ -8,10 +8,16 @@ use App\LowonganModel;
 use App\lamaranModel;
 use App\PekerjaModel;
 use App\User;
+use File;
 use Auth;
 
 class PerusahaanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function Dashboard()
     {
         $data = PerusahaanModel::where('nama_perusahaan', Auth::user()->name)->first();
@@ -54,9 +60,31 @@ class PerusahaanController extends Controller
 
     public function UpdateProfilePerusahaan(Request $req, $id)
     {
-        $idPerusahaan = PerusahaanModel::where('id', $id)->first()->id_perusahaan;
-        PerusahaanModel::where('id', $id)->update($req->except(['_token', '_method', 'name']));
-        User::where('id', $idPerusahaan)->update(['name' => $req->nama_perusahaan]);
-        return redirect('perusahaan/profilePerusahaan');
+        $file_logo = $req->logo;
+        if ($file_logo == null) {
+            //only data without foto
+            $idPerusahaan = PerusahaanModel::where('id', $id)->first()->id_perusahaan;
+            PerusahaanModel::where('id', $id)->update($req->except(['_token', '_method', 'logo']));
+            User::where('id', $idPerusahaan)->update(['name' => $req->nama_perusahaan]);
+            return redirect('perusahaan/profile');
+        } else {
+            //foto
+                //delete foto
+            $logo = PerusahaanModel::where('id',$id)->first()->logo;
+            File::delete('img/perusahaan/'.$logo);
+                //insert foto
+            $name_logo = time()."_".$file_logo->getClientOriginalName();
+            $file_logo->move('img/perusahaan', $name_logo);
+            PerusahaanModel::where('id', $id)->first()->update(['logo'=>$name_logo,]);
+            //data
+            $idPerusahaan = PerusahaanModel::where('id', $id)->first()->id_perusahaan;
+            PerusahaanModel::where('id', $id)->update($req->except(['_token', '_method', 'logo']));
+            User::where('id', $idPerusahaan)->update(['name' => $req->nama_perusahaan]);
+            return redirect('perusahaan/profile');
+        }
+        // $idPerusahaan = PerusahaanModel::where('id', $id)->first()->id_perusahaan;
+        // PerusahaanModel::where('id', $id)->update($req->except(['_token', '_method', 'name']));
+        // User::where('id', $idPerusahaan)->update(['name' => $req->nama_perusahaan]);
+        // return redirect('perusahaan/profile');
     }
 }

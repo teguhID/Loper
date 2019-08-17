@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\PekerjaModel;
 
 class LoperViewController extends Controller
 {
     public function Dashboard()
     {
-        return view('mainVIew.loper');
+        $data = PekerjaModel::limit(6)->get();
+        return view('mainView.loper')->with('data', $data);
     }
 
     public function ListPerusahaan()
@@ -23,12 +25,14 @@ class LoperViewController extends Controller
 
     public function ListPekerja()
     {
-        return view('mainView.listPekerja');
+        $data = PekerjaModel::all();
+        return view('mainView.listPekerja')->with('data', $data);
     }
 
-    public function DetailPekerja()
+    public function DetailPekerja($id)
     {
-        return view('mainView.detailPekerja');
+        $data = PekerjaModel::find($id);
+        return view('mainView.detailPekerja')->with('data', $data);
     }
 
     public function DetailLowongan()

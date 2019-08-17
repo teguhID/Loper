@@ -16,21 +16,21 @@
         <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-edit" style="font-size: 140px;"></i></div>
         <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
             <div style="max-width: 300px;">
-                <p style="font-size: 21px;">Update Profile Perusahaan Anda</p><button class="btn btn-primary" type="button">Update</button></div>
+                <p style="font-size: 21px;">Update Profile Perusahaan Anda</p><a href="{{ url('perusahaan/editProfile') }}" class="btn btn-primary">Update</a></div>
         </div>
     </div>
     <div class="row d-flex justify-content-center align-items-center" style="margin-right: 23px;margin-left: 23px;margin-top: 90px;">
         <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-users" style="font-size: 140px;"></i></div>
         <div class="col-sm-6 d-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
             <div style="margin-bottom: 20px;max-width: 300px;">
-                <p style="font-size: 21px;">Temukan Calon Karyawan Anda</p><button class="btn btn-primary" type="button">Cari Karyawan</button></div>
+                <p style="font-size: 21px;">Temukan Calon Karyawan Anda</p><a href="{{ url('perusahaan/pekerja') }}" class="btn btn-primary">Cari Karyawan</a></div>
         </div>
     </div>
     <div class="row d-flex justify-content-center align-items-center" style="margin-right: 23px;margin-left: 23px;margin-top: 90px;">
         <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 15%;"><i class="fa fa-suitcase" style="font-size: 140px;"></i></div>
         <div class="col-sm-6 d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="max-width: 90%;">
             <div style="margin-bottom: 20px;max-width: 300px;">
-                <p style="font-size: 21px;">Buat Lowongan Yang Anda Butuhkan</p><button class="btn btn-primary" type="button">Lowongan</button></div>
+                <p style="font-size: 21px;">Buat Lowongan Yang Anda Butuhkan</p><a href="{{ url('perusahaan/lowongan/dashboard/create') }}" class="btn btn-primary">Lowongan</a></div>
         </div>
     </div>
 </div>
